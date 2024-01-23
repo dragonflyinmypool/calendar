@@ -11,7 +11,7 @@ export function load({ url }) {
 
 
     // Validating the received parameters
-    if (!weekInterval || !startDate || !customerName ) {
+    if (!weekInterval || !startDate  ) {
         error(400, 'Missing week-interval or start-date parameters or customer name');
     }
     
