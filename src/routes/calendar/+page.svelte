@@ -64,6 +64,9 @@
 
 <div class="header">
   <h1>{customerName}</h1>
+  Every {frequencyInWeeks} week{#if frequencyInWeeks>1}s
+    
+  {/if}
 </div>
 
 <main>
@@ -81,10 +84,7 @@
   .page {
     margin-top: 20px;
   }
-  .header {
-    display: flex;
-    gap: 40px
-  }
+
   .logo {
     margin: 10px;
   }
