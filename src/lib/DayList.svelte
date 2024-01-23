@@ -1,19 +1,22 @@
 <script>
     export let dates = [];
 
-    const formatDate = (isoDate) => isoDate.split('-').reverse().join('/');
+    const formatDate = (isoDate) => {
+        const [year, month, day] = isoDate.split('-');
+        return `${month}/${day}/${year}`; // Switch to month/day/year format
+    };
 </script>
+
 <div class="center"> 
     <div class="date-list-container">
-    <h2 class="list-title">List of Dates</h2>
-    <div class="date-list">
-        {#each dates as date}
-            <div class="date-item">{formatDate(date)}</div>
-        {/each}
+        <h2 class="list-title">List of Dates</h2>
+        <div class="date-list">
+            {#each dates as date}
+                <div class="date-item">{formatDate(date)}</div>
+            {/each}
+        </div>
     </div>
 </div>
-</div>
-
 
 <style>
     .center {
