@@ -77,9 +77,8 @@
         background-color: #82b482; /* Highlight color */
         border-radius: 50%; /* Perfect circle */
         position: absolute;
-        width: 80%; /* Relative to parent */
-        height: 0;
-        padding-top: 80%; /* Top padding is based on width, creating a square */
+        width: 20px; /* Relative to parent */
+        height: 20px;
         z-index: -1;
         top: 50%;
         left: 50%;

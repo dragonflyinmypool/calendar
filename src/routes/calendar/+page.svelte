@@ -8,6 +8,7 @@
     // This input will now come from the data object
     let startDate = data.startDate || "2024-01-03"; // Fallback to a default date
     let frequencyInWeeks = data.weekInterval || 2; // Fallback to a default frequency
+    let customerName = data.customerName || "Fallback";
 
     // this is constant
     const currentYear = "2024"
@@ -35,7 +36,6 @@
 
     const allServiceDates = calculateServiceDates(startDate, frequencyInWeeks);
 
-    console.log(allServiceDates)
 
 
     // This function will help filter the service dates for a give month and put the service date in the correct format, without the leading 0
@@ -59,6 +59,12 @@
 
 
 </script>
+<div class="page">
+  <img class="logo" src="/logo.png" alt="My Logo" />
+
+<div class="header">
+  <h1>{customerName}</h1>
+</div>
 
 <main>
     <div class="calendars">
@@ -70,8 +76,19 @@
     <DayList dates={allServiceDates} />
 
 </main>
-
+</div>
 <style>
+  .page {
+    margin-top: 20px;
+  }
+  .header {
+    display: flex;
+    gap: 40px
+  }
+  .logo {
+    margin: 10px;
+  }
+
   main {
     display: grid;
     grid-template-columns: minmax(1fr, 1200px) 300px; /* Adjust the width as needed */
