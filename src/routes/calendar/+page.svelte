@@ -8,7 +8,7 @@
     // This input will now come from the data object
     let startDate = data.startDate || "2024-01-03"; // Fallback to a default date
     let frequencyInWeeks = data.weekInterval || 2; // Fallback to a default frequency
-    let customerName = data.customerName || "Fallback";
+    let customerName = data.customerName || "Service Schedule";
 
     // this is constant
     const currentYear = "2024"
@@ -20,16 +20,16 @@
 
     // Based on the input from the backend, lets calculate all the service dates
     function calculateServiceDates(startDate, frequencyInWeeks) {
-    const serviceDates = [];
-    let currentDate = new Date(startDate + 'T00:00:00Z');
+      const serviceDates = [];
+      let currentDate = new Date(startDate + 'T00:00:00Z');
 
 
-    while (currentDate.getUTCFullYear() === 2024) { // Assuming you're working with year 2024
-        serviceDates.push(currentDate.toISOString().split('T')[0]); // YYYY-MM-DD format
-        currentDate = new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 7 * frequencyInWeeks));
-    }
+      while (currentDate.getUTCFullYear() === 2024) { // Assuming you're working with year 2024
+          serviceDates.push(currentDate.toISOString().split('T')[0]); // YYYY-MM-DD format
+          currentDate = new Date(Date.UTC(currentDate.getUTCFullYear(), currentDate.getUTCMonth(), currentDate.getUTCDate() + 7 * frequencyInWeeks));
+      }
 
-    return serviceDates;
+      return serviceDates;
 }
 
 
